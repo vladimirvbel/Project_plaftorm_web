@@ -1,0 +1,16 @@
+# Secretos y variables de entorno
+.env
+.env.local
+
+# Dependencias (son pesadas y no se suben)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Archivos de compilación
+dist/
+build/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
