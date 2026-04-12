@@ -9,10 +9,10 @@ const Navbar = () => {
           {/* Logo / Marca */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-brand-terracota rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">M</span>
+              <span className="text-white font-bold">N</span>
             </div>
             <span className="text-xl font-black text-brand-textil tracking-tighter">
-              MANUM
+              LogoName
             </span>
           </div>
 

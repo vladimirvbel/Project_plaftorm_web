@@ -15,14 +15,15 @@ async function seed() {
 
     // 2. Insertar el Curso y obtener su ID
     const [courseResult]: any = await pool.query(
-      `INSERT INTO courses (titulo, descripcion, precio, instructor_id, categoria) 
-       VALUES (?, ?, ?, ?, ?)`,
+      `INSERT INTO courses (titulo, descripcion, precio, instructor_id, categoria, imagen_url) 
+      VALUES (?, ?, ?, ?, ?, ?)`,
       [
         'Costura Básica: Máquina de Pedal',
         'Aprende a dominar la máquina clásica desde cero.',
-        450.00,
+        449.99,
         instructorId,
-        'Costura'
+        'Costura',
+        'https://res.cloudinary.com/dr2q5yk1o/image/upload/q_auto/f_auto/v1776032385/hqdefault_ga6ynf.jpg' // Puedes subir una manual a Cloudinary y pegar el link aquí
       ]
     );
     // Esta es la clave: aquí guardamos el ID del curso recién creado
