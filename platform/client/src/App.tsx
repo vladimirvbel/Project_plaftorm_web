@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar' // <--- 1. Importas la pieza
 import AuthModal from './components/AuthModal' // <--- Importamos el modal aquí
+import Hero from './components/Hero' // Importar componente Hero Section
 
 interface Course {
   id: number;
@@ -49,6 +50,8 @@ function App() {
       {/* Le pasamos la función al Navbar para que pueda abrir el modal */}
       <Navbar user={user} onOpenAuth={() => setIsModalOpen(true)} />
 
+      {/* 2. Sección de Landing (Impacto Visual) */}
+      <Hero />
       <main className="max-w-7xl mx-auto p-8">
         <h1 className="text-5xl text-brand-terracota font-black mb-4">
           Plataforma Name 🧵

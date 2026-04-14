@@ -13,7 +13,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Fondo oscuro con Blur (Cierra al dar clic afuera) */}
-      <div 
+      <div
         className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm"
         onClick={onClose}
       />
@@ -28,16 +28,16 @@ const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
           <form className="space-y-4 mb-6" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label className="block text-xs font-bold uppercase text-stone-400 mb-1">Email</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-brand-terracota focus:ring-1 focus:ring-brand-terracota outline-none transition-all"
                 placeholder="tu@correo.com"
               />
             </div>
             <div>
               <label className="block text-xs font-bold uppercase text-stone-400 mb-1">Contraseña</label>
-              <input 
-                type="password" 
+              <input
+                type="password"
                 className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-brand-terracota focus:ring-1 focus:ring-brand-terracota outline-none transition-all"
                 placeholder="••••••••"
               />
@@ -61,10 +61,31 @@ const AuthModal = ({ isOpen, onClose, onSuccess }: AuthModalProps) => {
               shape="pill"
             />
           </div>
+          {/* BOTÓN DE BYPASS */}
+          <button
+            type="button"
+            onClick={() => {
+              // Simulamos la respuesta que daría tu backend
+              const mockUser = {
+                id: '999',
+                name: 'Bruno ',
+                email: 'bruno@local.com'
+              };
+
+              // Guardamos en localstorage para que el Navbar lo vea
+              localStorage.setItem('user', JSON.stringify(mockUser));
+
+              // Forzamos recarga o avisamos al padre
+              window.location.reload();
+            }}
+            className="w-full text-[10px] text-stone-300 hover:text-stone-500 transition-colors mt-2 uppercase tracking-widest"
+          >
+            ⚙️ Activar Modo Desarrollador (Bypass)
+          </button>
         </div>
 
         {/* Botón de cerrar X */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors"
         >
