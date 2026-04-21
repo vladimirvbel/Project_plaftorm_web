@@ -1,4 +1,3 @@
-import React from 'react';
 
 // Definimos que el Navbar ahora recibe una función por sus "props"
 interface NavbarProps {
