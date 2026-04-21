@@ -14,7 +14,7 @@ app.use(cors({
   // Debes tener AMBAS: la de tu PC para seguir probando y la de Vercel para la nube
   origin: [
     'http://localhost:5173', 
-    'https://tu-proyecto-manum.vercel.app' // <--- TU URL DE VERCEL AQUÍ
+    'https://manum-web.vercel.app' // <--- TU URL DE VERCEL AQUÍ
   ],
   credentials: true
 })); // permite solicitudes desde el frontend
