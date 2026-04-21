@@ -8,7 +8,7 @@ import { OAuth2Client } from 'google-auth-library';
 const client = new OAuth2Client(process.env.OAUTH_CLIENT_ID);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Render usará process.env.PORT
 
 app.use(cors()); // permite solicitudes desde el frontend
 app.use(express.json());
@@ -72,5 +72,5 @@ app.post('/api/auth/google', async (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor listo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });

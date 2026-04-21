@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "nodemon src/index.ts",
     "init-db": "tsx src/setup-db.ts",
     "seed": "tsx src/seed-db.ts",
     "build": "tsc",
