@@ -10,7 +10,14 @@ const client = new OAuth2Client(process.env.OAUTH_CLIENT_ID);
 const app = express();
 const PORT = process.env.PORT || 3000; // Render usará process.env.PORT
 
-app.use(cors()); // permite solicitudes desde el frontend
+app.use(cors({
+  // Debes tener AMBAS: la de tu PC para seguir probando y la de Vercel para la nube
+  origin: [
+    'http://localhost:5173', 
+    'https://tu-proyecto-manum.vercel.app' // <--- TU URL DE VERCEL AQUÍ
+  ],
+  credentials: true
+})); // permite solicitudes desde el frontend
 app.use(express.json());
 
 // API para obtener todos los cursos
